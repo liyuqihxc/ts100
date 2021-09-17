@@ -24,3 +24,13 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
+
+# STM32CubeMX generated files
+Firmware/Core/
+Firmware/Drivers/
+Firmware/startup_*.s
+Firmware/*_FLASH.ld
+Firmware/.mxproject
+
+# CMake build
+Firmware/build/

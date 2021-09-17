@@ -1,4 +1,5 @@
 # https://gist.github.com/kbumsik/52ce3f41a62f2485c3da1a585674e550
+# https://github.com/jobroe/cmake-arm-embedded
 cmake_minimum_required(VERSION 3.0)
 project("ObdII_Adapter_Firmware")
 
