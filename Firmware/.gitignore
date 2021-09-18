@@ -1,0 +1,5 @@
+# STM32CubeMX generated files
+Generated/
+
+# CMake build
+build/
