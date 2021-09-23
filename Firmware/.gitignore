@@ -1,5 +1,11 @@
 # STM32CubeMX generated files
 Generated/
+Core/
+Drivers/
+startup_*.s
+*_FLASH.ld
+.mxproject
+Makefile
 
 # CMake build
 build/
