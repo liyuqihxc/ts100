@@ -5,26 +5,23 @@ project("ts100" VERSION 0.1.0)
 
 set(MCU_LINE STM32F103xB)
 set(MCU_LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32F103C8Tx_FLASH.ld)
-# set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
+set(STARTUP_ASSEMBLY ${CMAKE_SOURCE_DIR}/startup_stm32f103xb.s)
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 
 set(default_build_type "Release")
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
   message(STATUS "Setting build type to '${default_build_type}' as none was specified.")
-  set(CMAKE_BUILD_TYPE "${default_build_type}" CACHE
-      STRING "Choose the type of build." FORCE)
+  set(CMAKE_BUILD_TYPE "${default_build_type}" CACHE STRING "Choose the type of build." FORCE)
   # Set the possible values of build type for cmake-gui
-  set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS
-    "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
+  set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
 endif()
 
 include(${CMAKE_SOURCE_DIR}/cmake/target_stm32f103.cmake)
 
-set(SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
+# set(SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
 
 # For diagnostic tools like rtags.
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-set(STARTUP_ASSEMBLY ${CMAKE_SOURCE_DIR}/startup_stm32f103xb.s)
 
 add_executable(${CMAKE_PROJECT_NAME}.elf
   # ${CMAKE_SOURCE_DIR}/src/main.cc

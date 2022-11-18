@@ -4,11 +4,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
+Title "Custom ts100 soldering iron"
+Date "2021-12-31"
 Rev ""
-Comp ""
-Comment1 ""
+Comp "liyuqihxc"
+Comment1 "https://github.com/liyuqihxc"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -328,18 +328,6 @@ F 3 "~" V 950 6200 50  0001 C CNN
 F 4 "C437199" H 950 6200 50  0001 C CNN "PartNum"
 	1    950  6200
 	0    1    1    0   
-$EndComp
-$Comp
-L Reference_Voltage:LM4040DBZ-8.2 U5
-U 1 1 614593C0
-P 2200 7050
-F 0 "U5" V 2246 6962 50  0000 R CNN
-F 1 "1N4728A" V 2155 6962 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-123" H 2200 6850 50  0001 C CIN
-F 3 "http://www.ti.com/lit/ds/symlink/lm4040-n.pdf" H 2200 7050 50  0001 C CIN
-F 4 "C140852" H 2200 7050 50  0001 C CNN "PartNum"
-	1    2200 7050
-	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:R_POT_Small RV1
@@ -778,12 +766,12 @@ $EndComp
 $Comp
 L power:+3V3 #PWR035
 U 1 1 615958C8
-P 9100 2350
-F 0 "#PWR035" H 9100 2200 50  0001 C CNN
-F 1 "+3V3" H 9115 2523 50  0000 C CNN
-F 2 "" H 9100 2350 50  0001 C CNN
-F 3 "" H 9100 2350 50  0001 C CNN
-	1    9100 2350
+P 8675 2125
+F 0 "#PWR035" H 8675 1975 50  0001 C CNN
+F 1 "+3V3" H 8690 2298 50  0000 C CNN
+F 2 "" H 8675 2125 50  0001 C CNN
+F 3 "" H 8675 2125 50  0001 C CNN
+	1    8675 2125
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -792,16 +780,10 @@ Wire Wire Line
 	9300 2300 9300 2200
 Wire Wire Line
 	9400 2400 9100 2400
-Wire Wire Line
-	9100 2400 9100 2350
 Text Label 9150 2500 0    50   ~ 0
 SCL
 Text Label 9150 2600 0    50   ~ 0
 SDA
-Wire Wire Line
-	9400 2500 9150 2500
-Wire Wire Line
-	9400 2600 9150 2600
 Wire Wire Line
 	1700 6050 1700 5950
 Wire Wire Line
@@ -881,9 +863,6 @@ NoConn ~ 4875 4325
 NoConn ~ 6175 4325
 NoConn ~ 6175 4025
 NoConn ~ 6175 3925
-NoConn ~ 6175 3825
-NoConn ~ 6175 3725
-NoConn ~ 6175 3625
 NoConn ~ 6175 3525
 NoConn ~ 6175 3425
 NoConn ~ 6175 3325
@@ -943,18 +922,10 @@ Text Label 8550 4650 0    50   ~ 0
 WAK_UP
 Wire Wire Line
 	8950 4650 8550 4650
-Text Label 4525 3625 0    50   ~ 0
+Text Label 6325 3625 0    50   ~ 0
 KEY1
-Text Label 4525 3725 0    50   ~ 0
+Text Label 6325 3725 0    50   ~ 0
 KEY2
-Text Label 4525 3825 0    50   ~ 0
-WAK_UP
-Wire Wire Line
-	4875 3625 4525 3625
-Wire Wire Line
-	4525 3725 4875 3725
-Wire Wire Line
-	4875 3825 4525 3825
 Wire Wire Line
 	9050 1000 9050 1150
 Wire Wire Line
@@ -1306,7 +1277,7 @@ Connection ~ 4300 6950
 Wire Wire Line
 	4300 6950 4375 6950
 Text Notes 3600 7575 0    50   ~ 0
-Cload=2 * (CL - Cstray)\nCL = crystal load capacitance\nCStray = pcb stray capacitance\nCstray usually be around 2pF - 10pF
+Cload=2 * (CL - Cstray)\nCL = crystal load capacitance\nCstray = pcb stray capacitance\nCstray usually be around 2pF - 10pF
 $Comp
 L KIGIT_DC-DC:MP2359DJ-LF-Z U4
 U 1 1 61CFE97F
@@ -1545,4 +1516,68 @@ Wire Wire Line
 Wire Wire Line
 	600  1900 1000 1900
 Connection ~ 1000 1900
+$Comp
+L Reference_Voltage:LM4040DBZ-8.2 U5
+U 1 1 614593C0
+P 2200 7050
+F 0 "U5" V 2246 6962 50  0000 R CNN
+F 1 "1N4728A" V 2155 6962 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-123" H 2200 6850 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lm4040-n.pdf" H 2200 7050 50  0001 C CIN
+F 4 "C140852" H 2200 7050 50  0001 C CNN "PartNum"
+	1    2200 7050
+	0    -1   -1   0   
+$EndComp
+Text Label 6325 3825 0    50   ~ 0
+WAK_UP
+Wire Wire Line
+	6175 3625 6325 3625
+Wire Wire Line
+	6175 3725 6325 3725
+Wire Wire Line
+	6175 3825 6325 3825
+$Comp
+L Device:R_Small R?
+U 1 1 62117427
+P 8825 2350
+F 0 "R?" H 8725 2400 50  0000 C CNN
+F 1 "4k7" H 8725 2300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8825 2350 50  0001 C CNN
+F 3 "~" H 8825 2350 50  0001 C CNN
+	1    8825 2350
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 62118B2E
+P 8525 2350
+F 0 "R?" H 8425 2400 50  0000 C CNN
+F 1 "4k7" H 8425 2300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8525 2350 50  0001 C CNN
+F 3 "~" H 8525 2350 50  0001 C CNN
+	1    8525 2350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8825 2125 8675 2125
+Wire Wire Line
+	8525 2125 8525 2250
+Wire Wire Line
+	8825 2125 8825 2250
+Connection ~ 8675 2125
+Wire Wire Line
+	8675 2125 8525 2125
+Wire Wire Line
+	8825 2125 9100 2125
+Wire Wire Line
+	9100 2125 9100 2400
+Connection ~ 8825 2125
+Wire Wire Line
+	8825 2450 8825 2500
+Wire Wire Line
+	8825 2500 9400 2500
+Wire Wire Line
+	8525 2450 8525 2600
+Wire Wire Line
+	8525 2600 9400 2600
 $EndSCHEMATC
