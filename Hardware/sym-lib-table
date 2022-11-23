@@ -1,4 +1,4 @@
 (sym_lib_table
-  (lib (name "ts100")(type "Legacy")(uri "${KIPRJMOD}/ts100.lib")(options "")(descr ""))
+  (lib (name "ts100")(type "KiCad")(uri "${KIPRJMOD}/ts100.kicad_sym")(options "")(descr ""))
   (lib (name "ObdAdapter")(type "Legacy")(uri "E:/Documents/Visual Studio 2015/Projects/ObdAdapter/Hardware/ObdAdapter.lib")(options "")(descr "")(disabled))
 )
